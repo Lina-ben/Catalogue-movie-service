@@ -1,0 +1,27 @@
+server:
+  port: 9091
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: catalogue-service
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ #http://registry-service.default.svc.cluster.local/eureka/
+  healthcheck:
+    enabled: true
+
+spring:
+  application:
+    name: catalogue-service
+
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+
+ 
+
